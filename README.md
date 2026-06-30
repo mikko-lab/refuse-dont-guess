@@ -1,6 +1,8 @@
 # Refuse, don't guess
 ### Deterministinen turvakerros LLM-agentille kriittisellä datapolulla
 
+> **TL;DR** — A single-file Python safety layer for an LLM agent on a business-critical path (invoice VAT classification). The LLM extracts facts from messy text; a deterministic rule decides; anything uncertain escalates to a human instead of being guessed. Three acceptance-criteria cases, a 1 000-run determinism check, and four security regression tests (newline bypass, Unicode NFD normalisation, both embedded in realistic invoice text). No dependencies beyond the standard library.
+
 Pienoismalli yhdestä asiasta: **miten estät LLM:ää menemästä hiljaa väärin** silloin kun virhe maksaa rahaa. Domain on rakennusalan ERP (saapuvan ostolaskun ALV-käsittely), mutta itse artefakti on turvakerros — ei poiminta, ei lakitulkinta.
 
 > **Liputa, älä piilota:** tämä on kuvitteellinen keissi, ei oikeaa asiakasdataa. Käytetty ALV-sääntö on tarkoituksella yksinkertaistettu *havainnollistava* placeholder — ei lainopillinen kannanotto. Katso osa 6.
